@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nguyen Hung Manh | Portfolio</title>
+  <meta name="description" content="Portfolio of Nguyen Hung Manh — Java Intern Student passionate about backend development and SQL databases.">
+  <!-- Poppins font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== FIXED NAVIGATION BAR ===== -->
+  <header class="navbar">
+    <a href="#home" class="logo" aria-label="Hung Manh — back to top">Hung Manh</a>
+
+    <!-- Hamburger button (visible on mobile only) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav aria-label="Main navigation">
+      <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HOME: hero section — text left, photo right ===== -->
+    <section id="home" class="hero container">
+      <div class="hero-text">
+        <p class="hello">Hi there, I am</p>
+        <h1>Nguyen Hung Manh</h1>
+        <!-- Typing effect: JS will cycle through roles automatically -->
+        <p class="role" aria-live="polite">
+          <span id="typingText"></span><span class="cursor" aria-hidden="true">|</span>
+        </p>
+        <p class="hero-bio">
+          I build Java applications and work with SQL databases to solve real-world problems.
+          My goal is to become a solid backend developer with clean, readable code habits.
+        </p>
+        <div class="actions">
+          <a href="#projects" class="btn">View My Projects</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+      <img
+        class="avatar"
+        src="me.jpg"
+        alt="Portrait photo of Nguyen Hung Manh"
+        width="360"
+        height="360"
+      >
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="container">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <p>
+          I am a final-year student at FPT University, specialising in Java backend development.
+          I enjoy breaking down complex problems into clear, manageable steps and writing code that others
+          can easily read and maintain. Outside of coding, I like exploring algorithms and building
+          small side projects to sharpen my skills.
+        </p>
+        <ul class="facts">
+          <li><strong>Education:</strong> FPT University (Year 4)</li>
+          <li><strong>Focus:</strong> Java Backend Development</li>
+          <li><strong>Interests:</strong> Algorithms, System Design, Side Projects</li>
+          <li><strong>GitHub:</strong> <a href="https://github.com/nguyenhungggmanhhh-coder" target="_blank" rel="noopener">nguyenhungggmanhhh-coder</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <!-- Category filter buttons -->
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="java" aria-pressed="false">Java</button>
+        <button class="filter" data-filter="web" aria-pressed="false">Web</button>
+        <button class="filter" data-filter="database" aria-pressed="false">Database</button>
+      </div>
+
+      <!-- Project grid: data-category is used for filtering; data-id links to the projects array in app.js -->
+      <div class="grid" id="projectGrid">
+
+        <article
+          class="card"
+          data-category="java"
+          data-id="0"
+          tabindex="0"
+          role="button"
+          aria-label="View details: School Bus Management System"
+        >
+          <h3>School Bus Management</h3>
+          <p>Real-time student attendance system built with Java Servlet/JSP and JDBC, leading a team of four.</p>
+          <span class="tag">Java</span>
+        </article>
+
+        <article
+          class="card"
+          data-category="database"
+          data-id="1"
+          tabindex="0"
+          role="button"
+          aria-label="View details: Flipped Learning Platform"
+        >
+          <h3>Flipped Learning Platform</h3>
+          <p>E-learning platform with a 30-table SQL Server schema, auto-save quiz progress and real-time SSE notifications.</p>
+          <span class="tag">Database</span>
+        </article>
+
+        <article
+          class="card"
+          data-category="web"
+          data-id="2"
+          tabindex="0"
+          role="button"
+          aria-label="View details: FPTU Forum"
+        >
+          <h3>FPTU Forum</h3>
+          <p>Community forum for FPTU students with role-based access: member posting, moderator review and admin management.</p>
+          <span class="tag">Web</span>
+        </article>
+
+        <article
+          class="card"
+          data-category="web"
+          data-id="3"
+          tabindex="0"
+          role="button"
+          aria-label="View details: Personal Portfolio"
+        >
+          <h3>Personal Portfolio</h3>
+          <p>Responsive single-page portfolio with project filtering, animated skill bars, modal details and form validation.</p>
+          <span class="tag">Web</span>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <div class="skills">
+        <!-- data-level = fill percentage; JS triggers the animation when the section scrolls into view -->
+        <div class="skill">
+          <span>Java</span>
+          <div class="bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Java — 75%">
+            <div class="fill" data-level="75"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>SQL Database</span>
+          <div class="bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="SQL Database — 70%">
+            <div class="fill" data-level="70"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>HTML</span>
+          <div class="bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="HTML — 80%">
+            <div class="fill" data-level="80"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>CSS</span>
+          <div class="bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="CSS — 70%">
+            <div class="fill" data-level="70"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript — 60%">
+            <div class="fill" data-level="60"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <span>Git</span>
+          <div class="bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="Git — 65%">
+            <div class="fill" data-level="65"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p class="contact-intro">Feel free to reach out — I am always open to new opportunities and collaborations.</p>
+      <p class="contact-email">&#128231; <a href="mailto:nguyenhungmanh1689@gmail.com">nguyenhungmanh1689@gmail.com</a></p>
+
+      <!-- novalidate: JavaScript handles all validation manually -->
+      <form id="contactForm" novalidate>
+
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="e.g. John Smith" autocomplete="name" aria-describedby="nameError">
+        <small class="error" id="nameError" role="alert" aria-live="polite"></small>
+
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="e.g. john@gmail.com" autocomplete="email" aria-describedby="emailError">
+        <small class="error" id="emailError" role="alert" aria-live="polite"></small>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Write your message here..." aria-describedby="messageError"></textarea>
+        <small class="error" id="messageError" role="alert" aria-live="polite"></small>
+
+        <button type="submit" class="btn">Send Message</button>
+        <p id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&#169; 2026 Nguyen Hung Manh &mdash;
+      <a href="https://github.com/nguyenhungggmanhhh-coder" target="_blank" rel="noopener" aria-label="Nguyen Hung Manh on GitHub">GitHub</a>
+      &nbsp;|&nbsp;
+      <a href="mailto:nguyenhungmanh1689@gmail.com" aria-label="Send email to Nguyen Hung Manh">Email</a>
+    </p>
+  </footer>
+
+  <!-- ===== PROJECT DETAIL MODAL ===== -->
+  <div class="modal" id="modal" hidden aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+      <p><strong>Technologies:</strong> <span id="modalTech"></span></p>
+      <p id="modalRole" class="modal-role"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
